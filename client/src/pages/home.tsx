@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Zap, Target, Users, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import bannerPath from "@assets/banner.jpg";
@@ -15,6 +16,31 @@ export default function HomePage() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  // Animation variants
+  const staggerContainer = {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const fadeInUp = {
+    initial: {
+      y: 60,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.43, 0.13, 0.23, 0.96],
+      },
+    },
+  };
 
   return (
     <div className="min-h-screen">
@@ -50,31 +76,41 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="text-center">
-            <div className="animate-fade-in-up">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                <span className="inline-block animate-text-reveal">Empowering Global Businesses with</span>
-                <span className="block text-blue-200 animate-text-reveal-delay">AI Innovation</span>
-              </h1>
-            </div>
-            <div className="animate-fade-in-up-delay-1">
-              <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed animate-text-fade-in">
-                Transform your business with cutting-edge AI solutions. We build intelligent applications that drive
-                growth, efficiency, and innovation.
-              </p>
-            </div>
-            <div className="animate-fade-in-up-delay-2">
+          <motion.div
+            className="text-center max-w-4xl mx-auto"
+            initial="initial"
+            animate="animate"
+            variants={staggerContainer}
+          >
+            <motion.h1
+              className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg"
+              variants={fadeInUp}
+            >
+              Empowering Global Businesses with{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
+                AI Innovation
+              </span>
+            </motion.h1>
+
+            <motion.p
+              className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8 bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md"
+              variants={fadeInUp}
+            >
+              Transform your business with cutting-edge AI solutions. We build intelligent applications that drive growth, efficiency, and innovation.
+            </motion.p>
+
+            <motion.div variants={fadeInUp}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 animate-button-glow">
+                <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700 text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
                   Explore Solutions
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                <Button size="lg" variant="outline" className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white text-lg px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 bg-white/90 backdrop-blur-sm">
                   Watch Demo
                 </Button>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
         
         {/* Scroll Indicator */}

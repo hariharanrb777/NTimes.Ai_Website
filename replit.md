@@ -134,6 +134,9 @@ NTimes.AI is a modern full-stack web application designed to showcase AI solutio
     - Added text reveal animations, button glow effects, and scroll indicators
     - Enhanced feature cards with progressive reveal animations and hover effects
     - Added animated background elements to CTA section
+    - Integrated Framer Motion for smooth animations with staggered text reveals
+    - Improved text visibility with backdrop blur and semi-transparent backgrounds
+    - Removed blue overlay from hero background for cleaner image display
 
 ## User Preferences
 
