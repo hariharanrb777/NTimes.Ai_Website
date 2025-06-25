@@ -21,25 +21,68 @@ export default function HomePage() {
       <Header />
       
       {/* Hero Section with Background Image */}
-      <section
-        className="relative py-20 lg:py-32 bg-cover bg-center bg-no-repeat min-h-[600px] flex items-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${bannerPath}')`,
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Animated Background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 animate-slow-zoom"
+          style={{
+            backgroundImage: `url('${bannerPath}')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/70 to-blue-900/80"></div>
+        </div>
+        
+        {/* Floating Geometric Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 animate-float">
+            <div className="w-16 h-16 bg-blue-400/20 rounded-full blur-sm"></div>
+          </div>
+          <div className="absolute top-40 right-32 animate-float-delay">
+            <div className="w-24 h-24 bg-blue-300/15 rounded-full blur-md"></div>
+          </div>
+          <div className="absolute bottom-32 left-32 animate-pulse">
+            <div className="w-12 h-12 bg-white/10 rounded-full blur-sm"></div>
+          </div>
+          <div className="absolute top-1/2 right-20 animate-bounce-slow">
+            <div className="w-8 h-8 bg-blue-200/20 rotate-45"></div>
+          </div>
+          <div className="absolute bottom-20 right-1/3 animate-spin-slow">
+            <div className="w-6 h-6 border-2 border-blue-300/30 rounded-full"></div>
+          </div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
-            <h1 className={`text-4xl lg:text-6xl font-bold text-white mb-6 transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
-              <span className="font-bold text-white">Empowering Global Businesses with AI Innovation</span>
-            </h1>
-            <p className={`text-xl text-white font-bold mb-8 leading-relaxed max-w-3xl mx-auto drop-shadow-md transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
-              Transform your business with cutting-edge AI solutions. We build intelligent applications that drive
-              growth, efficiency, and innovation.
-            </p>
+            <div className="animate-fade-in-up">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                <span className="inline-block animate-text-reveal">Empowering Global Businesses with</span>
+                <span className="block text-blue-200 animate-text-reveal-delay">AI Innovation</span>
+              </h1>
+            </div>
+            <div className="animate-fade-in-up-delay-1">
+              <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed animate-text-fade-in">
+                Transform your business with cutting-edge AI solutions. We build intelligent applications that drive
+                growth, efficiency, and innovation.
+              </p>
+            </div>
+            <div className="animate-fade-in-up-delay-2">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 animate-button-glow">
+                  Explore Solutions
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                  Watch Demo
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-scroll-indicator"></div>
           </div>
         </div>
       </section>
@@ -101,37 +144,75 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <Card className="border-0 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-500 overflow-hidden group">
-              <div className="aspect-video relative overflow-hidden">
+            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-700 overflow-hidden group animate-fade-in-left">
+              <div className="relative h-80 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 p-6 flex items-center justify-center">
                 <img
                   src={superAgentPath}
                   alt="SuperAgent Real Estate AI Platform"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-contain group-hover:scale-110 group-hover:rotate-1 transition-all duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
+                    <ArrowRight className="h-4 w-4 text-blue-600" />
+                  </div>
+                </div>
               </div>
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-4 group-hover:text-blue-600 transition-colors duration-300">SuperAgent</h3>
-                <p className="text-gray-600 mb-6">
+              <CardContent className="p-8 relative">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-blue-200 transition-colors duration-300">
+                    <Target className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">SuperAgent</h3>
+                </div>
+                <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   AI-powered real estate platform for the US market, connecting buyers, sellers, and agents with
                   intelligent matching and insights.
                 </p>
+                <div className="flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
+                  <span className="relative overflow-hidden">
+                    <span className="block transition-transform duration-300 group-hover:-translate-y-full">Explore Platform</span>
+                    <span className="absolute top-full left-0 transition-transform duration-300 group-hover:-translate-y-full">Discover More</span>
+                  </span>
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
+                </div>
+                <div className="absolute bottom-0 left-0 h-1 bg-blue-600 w-0 group-hover:w-full transition-all duration-700"></div>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-500 overflow-hidden group">
-              <div className="aspect-video relative overflow-hidden">
+            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-700 overflow-hidden group animate-fade-in-right">
+              <div className="relative h-80 overflow-hidden bg-gradient-to-br from-green-50 to-green-100 p-6 flex items-center justify-center">
                 <img 
                   src={zipTripPath} 
                   alt="ZipTrip AI Travel Companion" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                  className="w-full h-full object-contain group-hover:scale-110 group-hover:-rotate-1 transition-all duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-green-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
+                    <ArrowRight className="h-4 w-4 text-green-600" />
+                  </div>
+                </div>
               </div>
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-4 group-hover:text-blue-600 transition-colors duration-300">ZipTrip</h3>
-                <p className="text-gray-600 mb-6">
+              <CardContent className="p-8 relative">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-green-200 transition-colors duration-300">
+                    <Sparkles className="w-6 h-6 text-green-600 group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors duration-300">ZipTrip</h3>
+                </div>
+                <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   Your AI travel companion that handles everything from booking flights and hotels to restaurant
                   recommendations and trip planning.
                 </p>
+                <div className="flex items-center text-green-600 font-semibold group-hover:text-green-700 transition-colors">
+                  <span className="relative overflow-hidden">
+                    <span className="block transition-transform duration-300 group-hover:-translate-y-full">Start Journey</span>
+                    <span className="absolute top-full left-0 transition-transform duration-300 group-hover:-translate-y-full">Begin Adventure</span>
+                  </span>
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
+                </div>
+                <div className="absolute bottom-0 left-0 h-1 bg-green-600 w-0 group-hover:w-full transition-all duration-700"></div>
               </CardContent>
             </Card>
           </div>
@@ -139,14 +220,32 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-400/10 rounded-full animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-24 h-24 bg-blue-300/10 rounded-full animate-float-delay"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/5 rotate-45 animate-spin-slow"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="max-w-3xl mx-auto">
-            <Sparkles className="h-16 w-16 text-blue-200 mx-auto mb-6 animate-pulse" />
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 hover:scale-105 transition-transform duration-300">Ready to Transform Your Business?</h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <div className="mb-8 animate-fade-in-up">
+              <Sparkles className="h-16 w-16 text-blue-200 mx-auto mb-6 animate-pulse hover:scale-110 transition-transform duration-300" />
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 animate-text-reveal">Ready to Transform Your Business?</h2>
+            <p className="text-xl text-blue-100 mb-8 animate-text-fade-in">
               Join the AI revolution and unlock your business potential with our cutting-edge solutions.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up-delay-1">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-4 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+                Start Your Journey
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300">
+                Contact Sales
+              </Button>
+            </div>
           </div>
         </div>
       </section>
