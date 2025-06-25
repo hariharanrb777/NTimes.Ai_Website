@@ -83,7 +83,7 @@ export default function HomePage() {
             variants={staggerContainer}
           >
             <motion.h1
-              className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight"
               variants={fadeInUp}
             >
               Empowering Global Businesses with{" "}
@@ -93,7 +93,7 @@ export default function HomePage() {
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8 bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md"
+              className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8 max-w-3xl mx-auto"
               variants={fadeInUp}
             >
               Transform your business with cutting-edge AI solutions. We build intelligent applications that drive growth, efficiency, and innovation.
@@ -105,7 +105,7 @@ export default function HomePage() {
                   Explore Solutions
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white text-lg px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 bg-white/90 backdrop-blur-sm">
+                <Button size="lg" variant="outline" className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white text-lg px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
                   Watch Demo
                 </Button>
               </div>
