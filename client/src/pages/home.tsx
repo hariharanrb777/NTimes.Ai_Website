@@ -28,9 +28,7 @@ export default function HomePage() {
           style={{
             backgroundImage: `url('${bannerPath}')`,
           }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/70 to-blue-900/80"></div>
-        </div>
+        ></div>
         
         {/* Floating Geometric Elements */}
         <div className="absolute inset-0 overflow-hidden">
