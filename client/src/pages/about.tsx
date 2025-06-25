@@ -65,28 +65,39 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Sarah Chen",
-      role: "CEO & Co-Founder", 
-      bio: "Former AI researcher at Google with 10+ years in machine learning and business strategy.",
-      image: "/placeholder-user.jpg"
+      name: "Srinivas Ments",
+      role: "CEO",
+      bio: "Strategic leader driving AI innovation across global markets with extensive experience in technology transformation."
     },
     {
-      name: "Michael Rodriguez",
-      role: "CTO & Co-Founder",
-      bio: "Ex-Microsoft engineer specializing in scalable AI systems and cloud architecture.",
-      image: "/placeholder-user.jpg" 
+      name: "Kiran Mandadi",
+      role: "CFO",
+      bio: "Financial strategist ensuring sustainable growth and optimal resource allocation for AI development initiatives."
     },
     {
-      name: "Dr. Emily Watson",
-      role: "Head of AI Research",
-      bio: "PhD in Computer Science from Stanford, published researcher in neural networks and NLP.",
-      image: "/placeholder-user.jpg"
+      name: "Rajesh N",
+      role: "Digital Marketing Manager",
+      bio: "Marketing expert specializing in AI solutions promotion and building strong digital presence for tech products."
     },
     {
-      name: "David Kim", 
-      role: "VP of Engineering",
-      bio: "Full-stack engineer with expertise in AI/ML infrastructure and product development.",
-      image: "/placeholder-user.jpg"
+      name: "Hariharan R B",
+      role: "AI Engineer",
+      bio: "Senior AI engineer developing cutting-edge machine learning solutions and neural network architectures."
+    },
+    {
+      name: "Thilak Sai K",
+      role: "AI Engineer",
+      bio: "AI specialist focused on natural language processing and computer vision applications for business solutions."
+    },
+    {
+      name: "Mahalakshmi A",
+      role: "AI Engineer",
+      bio: "AI engineer specializing in data analytics and intelligent automation systems for enterprise applications."
+    },
+    {
+      name: "Harish A",
+      role: "AI Engineer",
+      bio: "AI engineer developing innovative algorithms and implementing scalable AI solutions for diverse industry applications."
     }
   ];
 
