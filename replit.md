@@ -125,6 +125,9 @@ NTimes.AI is a modern full-stack web application designed to showcase AI solutio
   - Improved navigation with underline hover effects and backdrop blur
   - Implemented custom CSS animations for professional user experience
   - Added parallax effects and smooth transitions throughout
+  - Updated team leadership section with specific member names and designations:
+    - Srinivas Ments (CEO), Kiran Mandadi (CFO), Rajesh N (Digital Marketing Manager)
+    - Hariharan R B, Thilak Sai K, Mahalakshmi A, Harish A (AI Engineers)
 
 ## User Preferences
 
