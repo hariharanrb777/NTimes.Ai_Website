@@ -230,19 +230,41 @@ export default function AboutPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member) => (
-              <Card key={member.name} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="text-center p-6">
-                  <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <Users className="h-12 w-12 text-gray-400" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member, index) => {
+              const colors = [
+                'from-blue-500 to-blue-700',
+                'from-purple-500 to-purple-700', 
+                'from-green-500 to-green-700',
+                'from-indigo-500 to-indigo-700',
+                'from-orange-500 to-orange-700',
+                'from-pink-500 to-pink-700',
+                'from-teal-500 to-teal-700'
+              ];
+              const textColors = [
+                'text-blue-600',
+                'text-purple-600',
+                'text-green-600', 
+                'text-indigo-600',
+                'text-orange-600',
+                'text-pink-600',
+                'text-teal-600'
+              ];
+              return (
+                <Card key={member.name} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden">
+                  <div className={`h-32 bg-gradient-to-br ${colors[index]} flex items-center justify-center`}>
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                      <Users className="h-8 w-8 text-white" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-4">{member.role}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
+                  <CardContent className="text-center p-4">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
+                    <p className={`${textColors[index]} font-medium text-sm mb-3`}>{member.role}</p>
+                    <p className="text-gray-600 text-xs leading-relaxed">{member.bio}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
