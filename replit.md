@@ -127,4 +127,7 @@ NTimes.AI is a modern full-stack web application designed to showcase AI solutio
 
 ## User Preferences
 
-Preferred communication style: Simple, everyday language.
+- Communication style: Simple, everyday language
+- Design preference: Exact matching over creative interpretation
+- Hero text: Bold white color for all hero section text
+- UI preference: Remove "Get Started" buttons from website

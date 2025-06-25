@@ -23,29 +23,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Empowering Global Businesses with <span className="text-blue-200">AI Innovation</span>
+              <span className="font-bold text-white">Empowering Global Businesses with AI Innovation</span>
             </h1>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto drop-shadow-md">
+            <p className="text-xl text-white font-bold mb-8 leading-relaxed max-w-3xl mx-auto drop-shadow-md">
               Transform your business with cutting-edge AI solutions. We build intelligent applications that drive
               growth, efficiency, and innovation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 shadow-lg">
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/about">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-600 shadow-lg"
-                >
-                  Learn More
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -161,22 +144,7 @@ export default function HomePage() {
             <p className="text-xl text-blue-100 mb-8">
               Join the AI revolution and unlock your business potential with our cutting-edge solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                  Start Your Journey
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-600"
-                >
-                  Schedule Consultation
-                </Button>
-              </Link>
-            </div>
+
           </div>
         </div>
       </section>
