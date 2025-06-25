@@ -115,12 +115,6 @@ export default function HomePage() {
                   AI-powered real estate platform for the US market, connecting buyers, sellers, and agents with
                   intelligent matching and insights.
                 </p>
-                <Link href="/products">
-                  <Button variant="outline" className="bg-white text-blue-600 border-blue-600 hover:bg-blue-50 hover:scale-105 transition-all duration-300">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
-                </Link>
               </CardContent>
             </Card>
 
@@ -138,12 +132,6 @@ export default function HomePage() {
                   Your AI travel companion that handles everything from booking flights and hotels to restaurant
                   recommendations and trip planning.
                 </p>
-                <Link href="/products">
-                  <Button variant="outline" className="bg-white text-blue-600 border-blue-600 hover:bg-blue-50 hover:scale-105 transition-all duration-300">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
-                </Link>
               </CardContent>
             </Card>
           </div>

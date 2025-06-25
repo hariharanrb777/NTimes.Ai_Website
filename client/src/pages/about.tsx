@@ -6,6 +6,7 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import logoPath from "@assets/logo.png";
 import bannerPath from "@assets/banner.jpg";
+import aboutImagePath from "@assets/about_1750861561002.jpg";
 
 export default function AboutPage() {
   const highlights = [
@@ -112,21 +113,12 @@ export default function AboutPage() {
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 At NTimes.AI, we're passionate about empowering global businesses with cutting-edge artificial intelligence solutions. Our mission is to make AI accessible, practical, and transformative for organizations of all sizes.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-blue-600 hover:bg-blue-700">
-                  Our Mission
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" className="bg-white text-gray-700 border-gray-300 hover:bg-gray-50">
-                  Join Our Team
-                </Button>
-              </div>
             </div>
-            <div className="relative">
-              <img
-                src={bannerPath}
-                alt="NTimes.AI Innovation Journey"
-                className="rounded-lg shadow-2xl w-full h-auto"
+            <div className="relative flex justify-center">
+              <img 
+                src={aboutImagePath} 
+                alt="NTimes.AI - AI Innovation Network" 
+                className="max-w-full h-auto rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>

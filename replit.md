@@ -131,4 +131,5 @@ NTimes.AI is a modern full-stack web application designed to showcase AI solutio
 - Communication style: Simple, everyday language
 - Design preference: Exact matching over creative interpretation
 - Hero text: Bold white color for all hero section text
-- UI preference: Remove "Get Started" buttons from website
+- UI preference: Remove "Get Started" and "Learn More" buttons from website
+- Visual content: Added about image showing AI connectivity and NTimes.AI branding
