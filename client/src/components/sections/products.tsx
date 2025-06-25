@@ -1,9 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check } from "lucide-react";
-import superAgentPath from "@assets/super agent_1750851041171.jpg";
-import zipTripPath from "@assets/ziptrip_1750851041171.jpg";
+import { Check, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
+import superAgentPath from "@assets/superagent.jpg";
+import zipTripPath from "@assets/ziptrip.jpg";
 
 export default function Products() {
   const products = [
@@ -81,9 +82,12 @@ export default function Products() {
                   ))}
                 </div>
                 
-                <Button className={`w-full ${product.buttonClass} text-white py-3 font-semibold`}>
-                  {product.buttonText}
-                </Button>
+                <Link href="/products">
+                  <Button className={`w-full ${product.buttonClass} text-white py-3 font-semibold`}>
+                    {product.buttonText}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

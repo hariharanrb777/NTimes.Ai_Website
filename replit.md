@@ -115,10 +115,14 @@ NTimes.AI is a modern full-stack web application designed to showcase AI solutio
 - `npm run start`: Production server startup
 - `npm run db:push`: Database schema deployment
 
-## Changelog
+## Recent Changes
 
-Changelog:
-- June 25, 2025. Initial setup
+- **June 25, 2025**: Created multi-page website structure
+  - Implemented separate pages for Products, Solutions, About, and Contact
+  - Added routing with wouter for navigation between pages
+  - Integrated uploaded images for SuperAgent and ZipTrip products
+  - Updated header/footer navigation for multi-page structure
+  - Styled with modern blue color scheme matching brand guidelines
 
 ## User Preferences
 

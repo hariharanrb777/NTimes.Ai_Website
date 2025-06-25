@@ -1,18 +1,8 @@
 import { Button } from "@/components/ui/button";
-import bannerPath from "@assets/NTimes.AI banner_1750851041170.jpg";
+import { Link } from "wouter";
+import bannerPath from "@assets/banner.jpg";
 
 export default function Hero() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 64;
-      const targetPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
 
   return (
     <section id="home" className="relative gradient-hero overflow-hidden">
@@ -28,21 +18,23 @@ export default function Hero() {
               Transform your business with cutting-edge AI automation, intelligent features, and seamless integrations that drive growth and efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                onClick={() => scrollToSection("solutions")}
-                className="bg-primary text-white hover:bg-secondary px-8 py-4 text-lg font-semibold"
-                size="lg"
-              >
-                Explore Solutions
-              </Button>
-              <Button 
-                onClick={() => scrollToSection("products")}
-                variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg font-semibold"
-                size="lg"
-              >
-                View Products
-              </Button>
+              <Link href="/solutions">
+                <Button 
+                  className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-4 text-lg font-semibold"
+                  size="lg"
+                >
+                  Explore Solutions
+                </Button>
+              </Link>
+              <Link href="/products">
+                <Button 
+                  variant="outline"
+                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg font-semibold"
+                  size="lg"
+                >
+                  View Products
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="relative">

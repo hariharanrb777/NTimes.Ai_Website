@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Settings, Brain, Plug, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Solutions() {
   const solutions = [
@@ -51,17 +52,7 @@ export default function Solutions() {
     }
   ];
 
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      const headerHeight = 64;
-      const targetPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
+
 
   return (
     <section id="solutions" className="py-20 bg-white">
@@ -99,9 +90,12 @@ export default function Solutions() {
                       </li>
                     ))}
                   </ul>
-                  <Button className={`w-full ${solution.buttonColor} text-white py-3 font-semibold`}>
-                    {solution.buttonText}
-                  </Button>
+                  <Link href="/solutions">
+                    <Button className={`w-full ${solution.buttonColor} text-white py-3 font-semibold`}>
+                      {solution.buttonText}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             );
@@ -114,13 +108,14 @@ export default function Solutions() {
           <p className="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
             Let our experts help you identify the perfect AI solution for your unique business challenges and goals.
           </p>
-          <Button 
-            onClick={scrollToContact}
-            className="bg-white text-primary hover:bg-neutral-100 px-8 py-4 font-semibold"
-            size="lg"
-          >
-            Schedule a Consultation
-          </Button>
+          <Link href="/contact">
+            <Button 
+              className="bg-white text-blue-600 hover:bg-neutral-100 px-8 py-4 font-semibold"
+              size="lg"
+            >
+              Schedule a Consultation
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,55 +1,26 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logoPath from "@assets/N times Logo-13_1750851041172.png";
+import { Link, useLocation } from "wouter";
+import logoPath from "@assets/logo.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "features", "products", "solutions", "about", "contact"];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 64;
-      const targetPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
-    }
-    setIsMenuOpen(false);
-  };
+  const [location] = useLocation();
 
   const navItems = [
-    { id: "home", label: "Home" },
-    { id: "products", label: "Products" },
-    { id: "solutions", label: "Solutions" },
-    { id: "about", label: "About Us" },
-    { id: "contact", label: "Contact Us" }
+    { path: "/", label: "Home" },
+    { path: "/products", label: "Products" },
+    { path: "/solutions", label: "Solutions" },
+    { path: "/about", label: "About Us" },
+    { path: "/contact", label: "Contact Us" }
   ];
+
+  const isActive = (path: string) => {
+    if (path === "/" && location === "/") return true;
+    if (path !== "/" && location.startsWith(path)) return true;
+    return false;
+  };
 
   return (
     <header className="bg-white shadow-sm border-b border-neutral-100 sticky top-0 z-50">
@@ -57,36 +28,37 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <img src={logoPath} alt="NTimes.AI Logo" className="h-8 w-auto" />
+            <Link href="/">
+              <img src={logoPath} alt="NTimes.AI Logo" className="h-8 w-auto cursor-pointer" />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                <Link
+                  key={item.path}
+                  href={item.path}
                   className={`transition-colors duration-200 font-medium ${
-                    activeSection === item.id
-                      ? "text-primary"
-                      : "text-neutral-600 hover:text-primary"
+                    isActive(item.path)
+                      ? "text-blue-600"
+                      : "text-neutral-600 hover:text-blue-600"
                   }`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button 
-              onClick={() => scrollToSection("contact")}
-              className="bg-primary text-white hover:bg-secondary"
-            >
-              Get Started
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-blue-600 text-white hover:bg-blue-700">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -107,20 +79,24 @@ export default function Header() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-neutral-100">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-3 py-2 text-neutral-600 hover:text-primary transition-colors duration-200"
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block w-full text-left px-3 py-2 transition-colors duration-200 ${
+                    isActive(item.path)
+                      ? "text-blue-600"
+                      : "text-neutral-600 hover:text-blue-600"
+                  }`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
-              <Button 
-                onClick={() => scrollToSection("contact")}
-                className="w-full bg-primary text-white hover:bg-secondary mt-4"
-              >
-                Get Started
-              </Button>
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                <Button className="w-full bg-blue-600 text-white hover:bg-blue-700 mt-4">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </div>
         )}

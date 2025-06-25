@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Globe, Rocket, Handshake, Star, Lightbulb, Heart } from "lucide-react";
-import logoPath from "@assets/N times Logo-13_1750851041172.png";
+import logoPath from "@assets/logo.png";
 
 export default function About() {
   const highlights = [

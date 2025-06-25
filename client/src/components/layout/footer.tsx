@@ -1,26 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Twitter, Linkedin, Github, Youtube } from "lucide-react";
-import logoPath from "@assets/N times Logo-13_1750851041172.png";
+import { Link } from "wouter";
+import logoPath from "@assets/logo.png";
 
 export default function Footer() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 64;
-      const targetPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
-
   const quickLinks = [
-    { id: "home", label: "Home" },
-    { id: "products", label: "Products" },
-    { id: "solutions", label: "Solutions" },
-    { id: "about", label: "About Us" },
-    { id: "contact", label: "Contact Us" }
+    { path: "/", label: "Home" },
+    { path: "/products", label: "Products" },
+    { path: "/solutions", label: "Solutions" },
+    { path: "/about", label: "About Us" },
+    { path: "/contact", label: "Contact Us" }
   ];
 
   const socialLinks = [
@@ -36,11 +25,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <img 
-              src={logoPath} 
-              alt="NTimes.AI Logo" 
-              className="h-8 w-auto mb-4 filter brightness-0 invert" 
-            />
+            <Link href="/">
+              <img 
+                src={logoPath} 
+                alt="NTimes.AI Logo" 
+                className="h-8 w-auto mb-4 filter brightness-0 invert cursor-pointer" 
+              />
+            </Link>
             <p className="text-neutral-400 mb-6 max-w-md">
               Empowering global businesses with cutting-edge AI solutions. Transform your operations with our innovative automation, AI features, and seamless integrations.
             </p>
@@ -51,7 +42,7 @@ export default function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
-                    className="text-neutral-400 hover:text-primary transition-colors duration-200"
+                    className="text-neutral-400 hover:text-blue-400 transition-colors duration-200"
                     aria-label={social.label}
                   >
                     <Icon className="h-5 w-5" />
@@ -66,13 +57,13 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
-                <li key={link.id}>
-                  <button
-                    onClick={() => scrollToSection(link.id)}
-                    className="text-neutral-400 hover:text-primary transition-colors duration-200"
+                <li key={link.path}>
+                  <Link
+                    href={link.path}
+                    className="text-neutral-400 hover:text-blue-400 transition-colors duration-200"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
