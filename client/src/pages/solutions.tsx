@@ -165,23 +165,7 @@ export default function SolutionsPage() {
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               Let our experts help you identify the perfect AI solution for your unique business challenges and goals. Schedule a consultation to get started.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                onClick={scrollToContact}
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 font-semibold"
-                size="lg"
-              >
-                Schedule a Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 font-semibold"
-                size="lg"
-              >
-                View Case Studies
-              </Button>
-            </div>
+
           </div>
         </div>
       </section>

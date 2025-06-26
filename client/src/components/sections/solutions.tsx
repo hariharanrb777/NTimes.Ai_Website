@@ -108,14 +108,7 @@ export default function Solutions() {
           <p className="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
             Let our experts help you identify the perfect AI solution for your unique business challenges and goals.
           </p>
-          <Link href="/contact">
-            <Button 
-              className="bg-white text-blue-600 hover:bg-neutral-100 px-8 py-4 font-semibold"
-              size="lg"
-            >
-              Schedule a Consultation
-            </Button>
-          </Link>
+
         </div>
       </div>
     </section>

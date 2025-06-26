@@ -52,14 +52,7 @@ export default function Header() {
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link href="/contact">
-              <Button className="bg-blue-600 text-white hover:bg-blue-700">
-                Get Started
-              </Button>
-            </Link>
-          </div>
+
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -92,11 +85,7 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                <Button className="w-full bg-blue-600 text-white hover:bg-blue-700 mt-4">
-                  Get Started
-                </Button>
-              </Link>
+
             </div>
           </div>
         )}

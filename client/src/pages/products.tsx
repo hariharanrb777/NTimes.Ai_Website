@@ -107,15 +107,7 @@ export default function ProductsPage() {
                     ))}
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button className={product.buttonClass}>
-                      {product.buttonText}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                    <Button variant="outline" className="bg-white text-gray-700 border-gray-300 hover:bg-gray-50">
-                      Request Demo
-                    </Button>
-                  </div>
+
                 </div>
 
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>

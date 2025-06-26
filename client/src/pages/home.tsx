@@ -99,17 +99,7 @@ export default function HomePage() {
               Transform your business with cutting-edge AI solutions. We build intelligent applications that drive growth, efficiency, and innovation.
             </motion.p>
 
-            <motion.div variants={fadeInUp}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700 text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
-                  Explore Solutions
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white text-lg px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
-                  Watch Demo
-                </Button>
-              </div>
-            </motion.div>
+
           </motion.div>
         </div>
         
@@ -232,13 +222,7 @@ export default function HomePage() {
                     AI-powered real estate platform for the US market, connecting buyers, sellers, and agents with
                     intelligent matching and insights.
                   </p>
-                  <motion.div 
-                    className="flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors cursor-pointer"
-                    whileHover={{ x: 5 }}
-                  >
-                    <span>Explore Platform</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
-                  </motion.div>
+
                   <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 w-0 group-hover:w-full transition-all duration-700"></div>
                 </CardContent>
               </Card>
@@ -298,13 +282,7 @@ export default function HomePage() {
                     Your AI travel companion that handles everything from booking flights and hotels to restaurant
                     recommendations and trip planning.
                   </p>
-                  <motion.div 
-                    className="flex items-center text-green-600 font-semibold group-hover:text-green-700 transition-colors cursor-pointer"
-                    whileHover={{ x: 5 }}
-                  >
-                    <span>Start Journey</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
-                  </motion.div>
+
                   <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-green-500 to-teal-500 w-0 group-hover:w-full transition-all duration-700"></div>
                 </CardContent>
               </Card>
@@ -331,15 +309,7 @@ export default function HomePage() {
             <p className="text-xl text-blue-100 mb-8 animate-text-fade-in">
               Join the AI revolution and unlock your business potential with our cutting-edge solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up-delay-1">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-4 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
-                Start Your Journey
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300">
-                Contact Sales
-              </Button>
-            </div>
+
           </div>
         </div>
       </section>
