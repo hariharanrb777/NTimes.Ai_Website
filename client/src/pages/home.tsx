@@ -177,78 +177,138 @@ export default function HomePage() {
             <p className="text-xl text-gray-600">Innovative AI applications that solve real-world problems</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-700 overflow-hidden group animate-fade-in-left">
-              <div className="relative h-80 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 p-6 flex items-center justify-center">
-                <img
-                  src={superAgentPath}
-                  alt="SuperAgent Real Estate AI Platform"
-                  className="w-full h-full object-contain group-hover:scale-110 group-hover:rotate-1 transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
-                    <ArrowRight className="h-4 w-4 text-blue-600" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            >
+              <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group bg-gradient-to-br from-blue-50 via-white to-blue-50 relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative h-80 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 p-6 flex items-center justify-center">
+                  <motion.img
+                    src={superAgentPath}
+                    alt="SuperAgent Real Estate AI Platform"
+                    className="w-full h-full object-contain"
+                    whileHover={{ 
+                      scale: 1.1, 
+                      rotate: 2,
+                      transition: { duration: 0.6 }
+                    }}
+                  />
+                  <motion.div 
+                    className="absolute top-4 right-4 opacity-0 group-hover:opacity-100"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
+                      <ArrowRight className="h-5 w-5 text-blue-600" />
+                    </div>
+                  </motion.div>
+                </div>
+                <CardContent className="p-8 relative z-10">
+                  <div className="flex items-center mb-6">
+                    <motion.div 
+                      className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg"
+                      whileHover={{ 
+                        scale: 1.2,
+                        rotate: 360,
+                        transition: { duration: 0.6 }
+                      }}
+                    >
+                      <Target className="w-7 h-7 text-white" />
+                    </motion.div>
+                    <motion.h3 
+                      className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      SuperAgent
+                    </motion.h3>
                   </div>
-                </div>
-              </div>
-              <CardContent className="p-8 relative">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Target className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">SuperAgent</h3>
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                  AI-powered real estate platform for the US market, connecting buyers, sellers, and agents with
-                  intelligent matching and insights.
-                </p>
-                <div className="flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
-                  <span className="relative overflow-hidden">
-                    <span className="block transition-transform duration-300 group-hover:-translate-y-full">Explore Platform</span>
-                    <span className="absolute top-full left-0 transition-transform duration-300 group-hover:-translate-y-full">Discover More</span>
-                  </span>
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
-                </div>
-                <div className="absolute bottom-0 left-0 h-1 bg-blue-600 w-0 group-hover:w-full transition-all duration-700"></div>
-              </CardContent>
-            </Card>
+                  <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    AI-powered real estate platform for the US market, connecting buyers, sellers, and agents with
+                    intelligent matching and insights.
+                  </p>
+                  <motion.div 
+                    className="flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors cursor-pointer"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span>Explore Platform</span>
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
+                  </motion.div>
+                  <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 w-0 group-hover:w-full transition-all duration-700"></div>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-700 overflow-hidden group animate-fade-in-right">
-              <div className="relative h-80 overflow-hidden bg-gradient-to-br from-green-50 to-green-100 p-6 flex items-center justify-center">
-                <img 
-                  src={zipTripPath} 
-                  alt="ZipTrip AI Travel Companion" 
-                  className="w-full h-full object-contain group-hover:scale-110 group-hover:-rotate-1 transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-green-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
-                    <ArrowRight className="h-4 w-4 text-green-600" />
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            >
+              <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group bg-gradient-to-br from-green-50 via-white to-green-50 relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative h-80 overflow-hidden bg-gradient-to-br from-green-50 to-green-100 p-6 flex items-center justify-center">
+                  <motion.img 
+                    src={zipTripPath} 
+                    alt="ZipTrip AI Travel Companion" 
+                    className="w-full h-full object-contain"
+                    whileHover={{ 
+                      scale: 1.1, 
+                      rotate: -2,
+                      transition: { duration: 0.6 }
+                    }}
+                  />
+                  <motion.div 
+                    className="absolute top-4 right-4 opacity-0 group-hover:opacity-100"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
+                      <ArrowRight className="h-5 w-5 text-green-600" />
+                    </div>
+                  </motion.div>
+                </div>
+                <CardContent className="p-8 relative z-10">
+                  <div className="flex items-center mb-6">
+                    <motion.div 
+                      className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4 shadow-lg"
+                      whileHover={{ 
+                        scale: 1.2,
+                        rotate: 360,
+                        transition: { duration: 0.6 }
+                      }}
+                    >
+                      <Sparkles className="w-7 h-7 text-white" />
+                    </motion.div>
+                    <motion.h3 
+                      className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors duration-300"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      ZipTrip
+                    </motion.h3>
                   </div>
-                </div>
-              </div>
-              <CardContent className="p-8 relative">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <Sparkles className="w-6 h-6 text-green-600 group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors duration-300">ZipTrip</h3>
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                  Your AI travel companion that handles everything from booking flights and hotels to restaurant
-                  recommendations and trip planning.
-                </p>
-                <div className="flex items-center text-green-600 font-semibold group-hover:text-green-700 transition-colors">
-                  <span className="relative overflow-hidden">
-                    <span className="block transition-transform duration-300 group-hover:-translate-y-full">Start Journey</span>
-                    <span className="absolute top-full left-0 transition-transform duration-300 group-hover:-translate-y-full">Begin Adventure</span>
-                  </span>
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
-                </div>
-                <div className="absolute bottom-0 left-0 h-1 bg-green-600 w-0 group-hover:w-full transition-all duration-700"></div>
-              </CardContent>
-            </Card>
+                  <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    Your AI travel companion that handles everything from booking flights and hotels to restaurant
+                    recommendations and trip planning.
+                  </p>
+                  <motion.div 
+                    className="flex items-center text-green-600 font-semibold group-hover:text-green-700 transition-colors cursor-pointer"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span>Start Journey</span>
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
+                  </motion.div>
+                  <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-green-500 to-teal-500 w-0 group-hover:w-full transition-all duration-700"></div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>

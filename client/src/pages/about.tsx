@@ -65,7 +65,7 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Srinivas Ments",
+      name: "Srinivas Menta",
       role: "CEO",
       bio: "Strategic leader driving AI innovation across global markets with extensive experience in technology transformation."
     },
