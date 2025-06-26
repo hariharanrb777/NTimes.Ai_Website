@@ -54,7 +54,9 @@ export default function HomePage() {
           style={{
             backgroundImage: `url('${bannerPath}')`,
           }}
-        ></div>
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
         
         {/* Floating Geometric Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -83,17 +85,19 @@ export default function HomePage() {
             variants={staggerContainer}
           >
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight drop-shadow-lg"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight"
+              style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}
               variants={fadeInUp}
             >
               Empowering Global Businesses with{" "}
-              <span className="text-white">
+              <span className="text-white font-bold">
                 AI Innovation
               </span>
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-white leading-relaxed mb-8 max-w-3xl mx-auto drop-shadow-md"
+              className="text-xl md:text-2xl text-white leading-relaxed mb-8 max-w-3xl mx-auto font-medium"
+              style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}
               variants={fadeInUp}
             >
               Transform your business with cutting-edge AI solutions. We build intelligent applications that drive growth, efficiency, and innovation.
