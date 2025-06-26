@@ -83,17 +83,17 @@ export default function HomePage() {
             variants={staggerContainer}
           >
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight drop-shadow-lg"
               variants={fadeInUp}
             >
               Empowering Global Businesses with{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
+              <span className="text-white">
                 AI Innovation
               </span>
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-white leading-relaxed mb-8 max-w-3xl mx-auto drop-shadow-md"
               variants={fadeInUp}
             >
               Transform your business with cutting-edge AI solutions. We build intelligent applications that drive growth, efficiency, and innovation.
