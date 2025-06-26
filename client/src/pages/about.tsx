@@ -70,7 +70,7 @@ export default function AboutPage() {
       bio: "Strategic leader driving AI innovation across global markets with extensive experience in technology transformation."
     },
     {
-      name: "Kiran Mandadi",
+      name: "Kiran Mandhadi",
       role: "CFO",
       bio: "Financial strategist ensuring sustainable growth and optimal resource allocation for AI development initiatives."
     },
