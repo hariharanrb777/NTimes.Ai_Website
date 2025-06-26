@@ -145,10 +145,7 @@ export default function SolutionsPage() {
                         </li>
                       ))}
                     </ul>
-                    <Button className={`w-full ${solution.buttonColor} text-white py-3 font-semibold`}>
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+
                   </CardContent>
                 </Card>
               );
